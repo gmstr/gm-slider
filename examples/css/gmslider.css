@@ -1,0 +1,65 @@
+.gm-slider {
+  padding: 0px;
+  position: relative;
+  z-index: 100;
+  overflow: hidden; }
+  .gm-slider ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    position: relative; }
+    .gm-slider ul li {
+      position: absolute;
+      display: block;
+      width: 100%; }
+      .gm-slider ul li img {
+        position: relative;
+        z-index: 1; }
+  .gm-slider .active {
+    z-index: 10; }
+  .gm-slider .reset {
+    z-index: 3; }
+  .gm-slider span {
+    display: none;
+    color: white;
+    bottom: 0px;
+    padding: 10px;
+    width: 100%;
+    left: 0px;
+    position: absolute !important;
+    z-index: 555;
+    background: url("i/comment-bg.png");
+    font-family: Verdana, Geneva, sans-serif; }
+
+.control-active {
+  background: url("i/active.png") no-repeat !important;
+  height: 20px !important;
+  margin-top: 9px !important; }
+
+.control-hover {
+  background: url("i/active.png") top no-repeat !important;
+  height: 20px !important;
+  margin-top: 9px !important; }
+
+#wrapper {
+  height: 410px;
+  overflow: auto; }
+
+.controls {
+  margin-top: 45px;
+  position: absolute;
+  background: url("i/control-bg.png") no-repeat;
+  display: block;
+  width: 202px;
+  height: 42px;
+  padding-left: 5px; }
+  .controls li {
+    position: relative;
+    float: left;
+    margin: 12px 5px 5px;
+    display: block;
+    width: 17px;
+    height: 15px;
+    background: url("i/default.png") no-repeat;
+    text-indent: -99999px;
+    cursor: pointer; }
