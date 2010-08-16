@@ -1,0 +1,1 @@
+# gm-slider is a modular jQuery slider plugin
