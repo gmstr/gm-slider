@@ -61,7 +61,20 @@
 		}
 		var bool = true,
 				first_bool = true;
-		
+			
+		function init() {
+			if(options.controls) { options.controlsConstructor(); }
+			
+			li.first().find('span').css('display', 'inline');
+			current.children().hide();
+
+			root.wrap('<div class="gm-slider" />');
+			root.parent().css({
+				"width": options.width, 
+				"height": options.height
+			});		
+			image_timer = setTimeout(function() { effects(); }, options.delay); 
+		}
 
 		function setImage(index) {
 			if (in_animation == true || current.index('.jw-slider ul li') == index)
@@ -69,7 +82,7 @@
 
 			li.removeClass('reset active');
 
-			current.find('span').hide();
+			current.find('span').fadeOut(750);
 
 			clearTimeout(image_timer); // manual override
 
@@ -94,23 +107,25 @@
 				transitionArray[index]( current.find('img'), options, endEffect );
 			}
 		}
-		function endEffect(image, timer) {
-			current.find('span').fadeIn('slow');
+		function endEffect(image, timer) {	
+					
 			if (options.controls == true) { controls.removeClass('control-active');controls.eq(current.index('.gm-slider li')).addClass('control-active'); }
 			clearInterval(timer);
 			setTimeout(function()
 				{
+					root.find('span').slideUp(250); //fix for initialisation
+					current.find('span').slideDown(250);
 					image.show();
 					$("."+options.tempClassName).remove(); 
 					in_animation = false;
 					if (!override)
 						image_timer = setTimeout(function()
-							{
+							{	
 								switcher();
-								image.next().fadeOut('slow');
+								
 								effects();
 							}, options.delay);
-				}, 1000);
+				}, options.componentduration);
 		}
 
 		function switcher() {
@@ -123,19 +138,6 @@
 			current.addClass('active').children().hide();
 
 			options.callback(current.children()[0]);
-		}	
-		function init() {
-			if(options.controls) { options.controlsConstructor(); }
-			
-			li.first().find('span').css('display', 'block');
-			current.children().hide();
-
-			root.wrap('<div class="gm-slider" />');
-			root.parent().css({
-				"width": options.width, 
-				"height": options.height
-			});		
-			image_timer = setTimeout(function() { effects(); }, options.delay); 
 		}
 	};
 	$.fn.gmslider.transitions = {};		

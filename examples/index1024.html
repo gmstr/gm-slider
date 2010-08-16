@@ -17,12 +17,15 @@
       $(function(){
         $('#wrapper').css({height:"auto", overflow:"visible"}); // just reset it
         $('#test').gmslider({
-          transition: "stripealternate",
-		  elementWidth: 50,
-		  elementHeight: 50,
-          delay: 5000,
+          transition: "random",
+		  elementWidth: 128,
+		  elementHeight: 128,
+		  width:1024,
+		  height:768,
+          delay: 2000,
           transitionspeed:1000,
-		  componentduration:350
+		  componentduration:500
+		  
         });
       });
 	</script>
@@ -39,7 +42,7 @@
       h1 { color:#00baff; font-size:32px; padding-bottom:5px; }
       h4 { color:#008bbe; font-size:18px;padding-bottom:15px;  }
       h2 { border-bottom:1px solid #cccccc; margin-bottom:10px; }
-      #wrapper{  width:600px; margin-left:auto; margin-right:auto; margin-top:50px; border:1px solid #3a3a3a; padding:10px; background:#292929 url('i/bg-slideshow.jpg') repeat-x;  -moz-border-radius: 10px; -webkit-border-radius: 10px; position:relative; z-index:10;   }
+      #wrapper{  width:1024px; margin-left:auto; margin-right:auto; margin-top:50px; border:1px solid #3a3a3a; padding:10px; background:#292929 url('i/bg-slideshow.jpg') repeat-x;  -moz-border-radius: 10px; -webkit-border-radius: 10px; position:relative; z-index:10;   }
       #reflect{   width:730px; margin-left:auto; margin-right:auto; display:block; margin-top:-30px; }
       a { text-decoration:none;  padding:7px; margin:20px; color:#fff; font-family:Tahoma,Arial;}
 	</style>
@@ -49,28 +52,24 @@
       <div id="wrapper">
         <ul id="test">
           <li>
-            <img src="img/im1.jpg" />
+            <img src="img/800x800/1.jpg" />
 			<span>Image 1</span>
           </li>
           <li>
-            <img src="img/im2.jpg" />
+            <img src="img/800x800/2.jpg" />
 			<span>Image 2</span>
           </li>
           <li>
-            <img src="img/im3.jpg" />
+            <img src="img/800x800/3.jpg" />
 			<span>Image 3</span>
           </li>
           <li>
-            <img src="img/im4.jpg" />        
+            <img src="img/800x800/4.jpg" />        
 			<span>Image 4</span>
           </li>
           <li>
-            <img src="img/im5.jpg" />
+            <img src="img/800x800/5.jpg" />
 			<span>Image 5</span>
-          </li>
-          <li>
-            <img src ="img/im6.jpg" />
-			<span>Image 6</span>
           </li>
         </ul>
       </div>
