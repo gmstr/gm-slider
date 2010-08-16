@@ -843,6 +843,170 @@
 							easing: 'easeOutSine'
 						});
 				}, options.transitionspeed/arr.length);
+		},
+		slidetopleft: function (image, options, callback) {
+			var w = options.width;
+			var h = options.height;
+			
+			var parent = image.parent();
+			var arr = new Array(); var i = 0; var j = 0; var index = 0;
+			var src = image.attr('src');
+			
+			var block = $('<div />', {
+				css:{
+					position: 'absolute',
+					width: w,
+					height: h,
+					'background-image': 'url('+src+')',
+					zIndex: 99,
+					display: 'block',
+					opacity: 1,
+					marginLeft: -w,
+					marginTop: -h
+				}
+			}).addClass(options.tempClassName);
+			
+			arr[0] = block;
+			parent.append(arr[0]);
+			
+			timer = setInterval(function()
+				{
+					if (i >= arr.length)
+					{
+						callback(image, timer);
+						return;
+					}
+					arr[i++].animate({
+							marginLeft: 0,
+							marginTop: 0
+						}, {
+							duration: options.componentduration,
+							easing: 'easeOutSine'
+						});
+				}, options.transitionspeed/arr.length);
+		},
+		slidebottomleft: function (image, options, callback) {
+			var w = options.width;
+			var h = options.height;
+			
+			var parent = image.parent();
+			var arr = new Array(); var i = 0; var j = 0; var index = 0;
+			var src = image.attr('src');
+			
+			var block = $('<div />', {
+				css:{
+					position: 'absolute',
+					width: w,
+					height: h,
+					'background-image': 'url('+src+')',
+					zIndex: 99,
+					display: 'block',
+					opacity: 1,
+					marginLeft: -w,
+					marginTop: h
+				}
+			}).addClass(options.tempClassName);
+			
+			arr[0] = block;
+			parent.append(arr[0]);
+			
+			timer = setInterval(function()
+				{
+					if (i >= arr.length)
+					{
+						callback(image, timer);
+						return;
+					}
+					arr[i++].animate({
+							marginLeft: 0,
+							marginTop: 0
+						}, {
+							duration: options.componentduration,
+							easing: 'easeOutSine'
+						});
+				}, options.transitionspeed/arr.length);
+		},
+		slidebottomright: function (image, options, callback) {
+			var w = options.width;
+			var h = options.height;
+			
+			var parent = image.parent();
+			var arr = new Array(); var i = 0; var j = 0; var index = 0;
+			var src = image.attr('src');
+			
+			var block = $('<div />', {
+				css:{
+					position: 'absolute',
+					width: w,
+					height: h,
+					'background-image': 'url('+src+')',
+					zIndex: 99,
+					display: 'block',
+					opacity: 1,
+					marginLeft: w,
+					marginTop: h
+				}
+			}).addClass(options.tempClassName);
+			
+			arr[0] = block;
+			parent.append(arr[0]);
+			
+			timer = setInterval(function()
+				{
+					if (i >= arr.length)
+					{
+						callback(image, timer);
+						return;
+					}
+					arr[i++].animate({
+							marginLeft: 0,
+							marginTop: 0
+						}, {
+							duration: options.componentduration,
+							easing: 'easeOutSine'
+						});
+				}, options.transitionspeed/arr.length);
+		},
+		slidetopright: function (image, options, callback) {
+			var w = options.width;
+			var h = options.height;
+			
+			var parent = image.parent();
+			var arr = new Array(); var i = 0; var j = 0; var index = 0;
+			var src = image.attr('src');
+			
+			var block = $('<div />', {
+				css:{
+					position: 'absolute',
+					width: w,
+					height: h,
+					'background-image': 'url('+src+')',
+					zIndex: 99,
+					display: 'block',
+					opacity: 1,
+					marginLeft: w,
+					marginTop: -h
+				}
+			}).addClass(options.tempClassName);
+			
+			arr[0] = block;
+			parent.append(arr[0]);
+			
+			timer = setInterval(function()
+				{
+					if (i >= arr.length)
+					{
+						callback(image, timer);
+						return;
+					}
+					arr[i++].animate({
+							marginLeft: 0,
+							marginTop: 0
+						}, {
+							duration: options.componentduration,
+							easing: 'easeOutSine'
+						});
+				}, options.transitionspeed/arr.length);
 		}
 		
 	});
