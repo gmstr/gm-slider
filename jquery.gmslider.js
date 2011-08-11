@@ -17,7 +17,6 @@
 					str = str + '<li>'+(i+1)+'</li>';
 				}
 				str = str + '</ul>';
-
 				root.after(str);
 
 				controls = root.parent().find('.controls li');
